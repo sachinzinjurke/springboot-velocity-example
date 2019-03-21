@@ -1,0 +1,142 @@
+#set ($dateFormat = 'MM-dd-yyyy HH:mm:ss')
+#set ($fileDateFormat= 'MM-dd-yyyy')
+#set ($headingStyle = "style='font-size: 12px;color: black; font-weight: bold; font-family:Arial,sans-serif'")
+#set ($headingStyle2 = "style='font-size: 14px;color: blue; font-weight: bold; align: left'")
+<html>
+<head>
+  <TITLE>$jobName</TITLE>
+  <style>
+   body, p, td, table, tr, .bodytext, .stepfield {
+        font-family: Verdana, arial, sans-serif;
+        font-size: 11px;
+        line-height: 16px;
+        color: #000000;
+        font-weight: normal;
+   }
+
+   body {
+        background-color: #ffffff;
+   }
+   h1 {
+        font-size: 24px;
+        line-height: normal;
+        font-weight: bold;
+        background-color: #f0f0f0;
+        color: #003366;
+        border-bottom: 1px solid #088CD6;
+        padding: 2px;
+        margin: 36px 0px 4px 0px;
+   }
+       
+   table {
+		border-top-width: 1px;
+		border-right-width: 1px;
+		border-bottom-width: 2px;
+		border-left-width: 1px;
+		border-collapse:separate; 
+        table-layout:table; 
+	}
+		
+	td.label {
+		word-wrap:break-word;
+		align:left;
+		text-align: left;
+	}
+   
+   td.content {
+		word-wrap:break-word;
+		align:center;
+		text-align: center;
+	}
+	
+   th.detail { 
+		border:solid 1px #000000;
+		background-color:#779EC5;
+		color:white;
+		align:center;
+	}
+   </style>
+</head>
+<body>
+    <br/>
+	<!-- JOB STATS table -->
+	<table border='1' width= '60%' cellspacing=0 cellpadding=3 align=center>
+        <tr>
+          <th class ="detail" width='60%'>JOB DETAILS</th>
+          <th class ="detail" width='40%'>COUNT</th>
+         </tr>
+       	<tr>
+			<td class="label">Job Run Status</td>
+			<td class="content">$jobRunStatus</td>
+		</tr>
+		<tr>
+            <td align=left>Mongo DB Server</td>
+            <td align=center>$mongoDbName</td>
+        </tr>
+		<tr>
+			<td class="label">Job Start Time</td>
+			<td class="content">$jobStartTime</td>
+		</tr>
+		<tr>
+			<td class="label">Job End Time</td>
+			<td class="content">$jobEndTime</td>
+		</tr>
+		<tr>
+			<td class="label">Job Run Duration</td>
+			<td class="content">$jobRunDuration</td>
+		</tr>
+     </table>
+
+	 <!-- DETAIL TABLES -->  
+  	<table border='1' width= '60%' cellspacing=0 cellpadding=3 align=center>   
+	  <tr>
+       <th class="detail" width='60%'>COLLECTION DETAILS</th>
+       <th class="detail" width='40%'>COUNT</th>
+	  </tr>
+	  
+	  <tr>
+	  <td  class="label">Total number of collections read from input</td>
+	  <td  class="content">$totalCollectionReadCount</td>
+	  </tr>
+	  
+	  <tr>
+	  <td  class="label">Total number of collections rejected due to validation</td>
+	  <td  class="content">$totalInvalidCollectionCount</td>
+	  </tr>
+	  
+	  <tr>
+	  <td  class="label">Total number of insertions into Content collection</td>
+	  <td  class="content">$totalCollectionInsertCount</td>
+	  </tr>
+	  
+	  <tr>
+	  <td  class="label">Total number of failed insertions into Content collection</td>
+	  <td  class="content">$totalCollectionFailCount</td>
+	  </tr>
+	  	  
+	  <tr>
+	  <td  class="label">Total number of collections inserted into Prodrel collection</td>
+	  <td  class="content">$totalProdRelInsertCount</td>
+	  </tr>
+	  
+	  <tr>
+	  <td  class="label">Total number of failed insertions into Prodrel collection</td>
+	  <td  class="content">$totalProdRelFailedCount</td>
+	  </tr>
+	  
+	  <tr>
+	  <td class="label">Number of online collections</td>
+	  <td class="content">$numOnlineCollections</td>
+	  </tr>
+	  
+	  <tr>
+	  <td class="label">Number of offline collections</td>
+      <td class="content">$numOfflineCollections</td>
+	  </tr>
+   </table>
+	<br/>
+	<br/>
+	<div align='center'>Note: This is an auto-generated mail from the Content Team. Please do not reply to this mail.</div>
+</body>
+</html>
+
